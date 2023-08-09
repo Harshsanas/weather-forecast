@@ -7,8 +7,6 @@ import * as S from './main.styles.js';
 //react icon
 import { FaGithub } from 'react-icons/fa';
 
-
-
 export default function Main({ label }) {
 
     const [cityInput, setCityInput] = useState('');
@@ -76,9 +74,9 @@ export default function Main({ label }) {
 
     const convertTemperature = (temperature) => {
         if (isCelsius) {
-            return Math.ceil(temperature - 273); // Convert from Kelvin to Celsius
+            return Math.ceil(temperature - 273); 
         } else {
-            return Math.ceil((temperature - 273) * 9 / 5 + 32); // Convert from Kelvin to Fahrenheit
+            return Math.ceil((temperature - 273) * 9 / 5 + 32); 
         }
     };
 
