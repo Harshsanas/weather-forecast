@@ -87,7 +87,7 @@ export default function Main({ label }) {
             <S.MainContainer>
                 <S.SubContainer>
                     <p className='heading-cls'>Weather Forecast Details</p>
-                    <a href="https://github.com/Harshsanas/React_WEATHERAPP/blob/main/src/Components/Main.jsx" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/Harshsanas/weather-forecast.git" target="_blank" rel="noopener noreferrer">
                         <FaGithub className='github-icon' />
                     </a>
                     <input
