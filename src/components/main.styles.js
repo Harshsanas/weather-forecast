@@ -1,15 +1,6 @@
 import styled from 'styled-components'
 
 export const MainContainer = styled.div`
-${'' /* width:100vw; */}
-padding: 60px;
-${'' /* height:100vh; */}
-background-color: #3F23EF;
-background-image: linear-gradient(315deg, #0052A2 0%, #3F23EF 74%);
-
-`
-
-export const SubContainer = styled.div`
 border:1px solid #00d4ff;
 padding:10px 10px 50px 10px;;
 box-shadow:1px solid #abe9cd;

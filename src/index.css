@@ -4,6 +4,10 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  padding: 60px;
+  background-color: #3f23ef;
+  background-image: linear-gradient(315deg, #0052a2 0%, #3f23ef 50%);
 }
 
 code {

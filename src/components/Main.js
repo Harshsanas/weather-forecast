@@ -74,114 +74,111 @@ export default function Main({ label }) {
 
     const convertTemperature = (temperature) => {
         if (isCelsius) {
-            return Math.ceil(temperature - 273); 
+            return Math.ceil(temperature - 273);
         } else {
-            return Math.ceil((temperature - 273) * 9 / 5 + 32); 
+            return Math.ceil((temperature - 273) * 9 / 5 + 32);
         }
     };
 
     return (
         <>
             <S.MainContainer>
-                <S.SubContainer>
-                    <p className='heading-cls'>Weather Forecast Details</p>
-                    <a href="https://github.com/Harshsanas/weather-forecast.git" target="_blank" rel="noopener noreferrer">
-                        <FaGithub className='github-icon' />
-                    </a>
-                    <input
-                        className='input-field'
-                        placeholder='Enter City Name'
-                        onChange={(e) => setCityInput(e.target.value)}
-                        type="text"
-                        value={cityInput}
-                        onKeyPress={search}
-                    />
+                <p className='heading-cls'>Weather Forecast Details</p>
+                <a href="https://github.com/Harshsanas/weather-forecast.git" target="_blank" rel="noopener noreferrer">
+                    <FaGithub className='github-icon' />
+                </a>
+                <input
+                    className='input-field'
+                    placeholder='Enter City Name'
+                    onChange={(e) => setCityInput(e.target.value)}
+                    type="text"
+                    value={cityInput}
+                    onKeyPress={search}
+                />
 
-                    {typeof weatherData?.main != "undefined" ? (
-                        <S.BodyContainer>
-                            <div className='row'>
-                                <div className='col-md-6 left-container'>
-                                    <p className='sub-heading'>Current Weather
-                                        &nbsp; &nbsp; <button onClick={toggleUnit}>
-                                            {isCelsius ? 'F' : 'C'}
-                                        </button></p>
-                                    <div className='row'>
-                                        <div className='col-md-4 sec-div'>
-                                            <p className='sub-title'>{weatherData?.name}, {weatherData?.sys?.country}</p>
-                                            {dateBuilder(new Date())}
-                                        </div>
-                                        <div className='col-md-4'>
-                                            <p className='sub-title'>{convertTemperature(weatherData?.main?.temp)}°{isCelsius ? 'C' : 'F'}</p>
-                                            {weatherData.weather[0].main}
-                                        </div>
-                                        <div className='col-md-4'>
-                                            <p className='sub-title'>Humidity</p>
-                                            {weatherData?.main?.humidity}
-                                        </div>
+                {typeof weatherData?.main != "undefined" ? (
+                    <S.BodyContainer>
+                        <div className='row'>
+                            <div className='col-md-6 left-container'>
+                                <p className='sub-heading'>Current Weather
+                                    &nbsp; &nbsp; <button onClick={toggleUnit}>
+                                        {isCelsius ? 'F' : 'C'}
+                                    </button></p>
+                                <div className='row'>
+                                    <div className='col-md-4 sec-div'>
+                                        <p className='sub-title'>{weatherData?.name}, {weatherData?.sys?.country}</p>
+                                        {dateBuilder(new Date())}
                                     </div>
-                                    <p className='sub-heading'>Air Condition</p>
-                                    <div className='row'>
-                                        <div className='col-md-3'>
-                                            <p className='sub-title'>Min Temp</p>
-                                            {Math.ceil(weatherData?.main?.temp_min) - 273}°C
-                                        </div>
-                                        <div className='col-md-3'>
-                                            <p className='sub-title'>Max Temp</p>
-                                            {Math.ceil(weatherData?.main?.temp_max) - 273}°C
-                                        </div>
-                                        <div className='col-md-3'>
-                                            <p className='sub-title'>Wind</p>
-                                            Speed : {weatherData?.wind?.speed} <br />
-                                            Dir : {weatherData?.wind?.deg}
-                                        </div>
-                                        <div className='col-md-3'>
-                                            <p className='sub-title'>Clouds</p>
-                                            {weatherData?.clouds?.all}
-                                        </div>
+                                    <div className='col-md-4'>
+                                        <p className='sub-title'>{convertTemperature(weatherData?.main?.temp)}°{isCelsius ? 'C' : 'F'}</p>
+                                        {weatherData.weather[0].main}
                                     </div>
-
-                                    <p className='sub-heading'>Today's Forecast</p>
-                                    <div className='row'>
-                                        <div className='col-md-10 forecast-subDiv'>
-                                            {dateBuilder(new Date())}<br />
-                                            {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
-                                            {weatherData.weather[0].main}
-                                        </div>
+                                    <div className='col-md-4'>
+                                        <p className='sub-title'>Humidity</p>
+                                        {weatherData?.main?.humidity}
                                     </div>
-
                                 </div>
-                                <div className='col-md-5 right-container'>
-                                    <p className='sub-heading'>five Days ForeCast</p>
-                                    <div className='row'>
-                                        {forecastData?.list?.dt_txt}
-                                        <div className='col-md-10 forecast-subDiv'>
-                                            {dateBuilder(new Date())}<br />
-                                            {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
-                                            {weatherData.weather[0].main}
-                                        </div>
-                                        <div className='col-md-10 forecast-subDiv'>
-                                            {dateBuilder(new Date())}<br />
-                                            {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
-                                            {weatherData.weather[0].main}
-                                        </div><div className='col-md-10 forecast-subDiv'>
-                                            {dateBuilder(new Date())}<br />
-                                            {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
-                                            {weatherData.weather[0].main}
-                                        </div><div className='col-md-10 forecast-subDiv'>
-                                            {dateBuilder(new Date())}<br />
-                                            {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
-                                            {weatherData.weather[0].main}
-                                        </div><div className='col-md-10 forecast-subDiv'>
-                                            {dateBuilder(new Date())}<br />
-                                            {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
-                                            {weatherData.weather[0].main}
-                                        </div>
+                                <p className='sub-heading'>Air Condition</p>
+                                <div className='row'>
+                                    <div className='col-md-3'>
+                                        <p className='sub-title'>Min Temp</p>
+                                        {Math.ceil(weatherData?.main?.temp_min) - 273}°C
+                                    </div>
+                                    <div className='col-md-3'>
+                                        <p className='sub-title'>Max Temp</p>
+                                        {Math.ceil(weatherData?.main?.temp_max) - 273}°C
+                                    </div>
+                                    <div className='col-md-3'>
+                                        <p className='sub-title'>Wind</p>
+                                        Speed : {weatherData?.wind?.speed} <br />
+                                        Dir : {weatherData?.wind?.deg}
+                                    </div>
+                                    <div className='col-md-3'>
+                                        <p className='sub-title'>Clouds</p>
+                                        {weatherData?.clouds?.all}
+                                    </div>
+                                </div>
+
+                                <p className='sub-heading'>Today's Forecast</p>
+                                <div className='row'>
+                                    <div className='col-md-10 forecast-subDiv'>
+                                        {dateBuilder(new Date())}<br />
+                                        {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
+                                        {weatherData.weather[0].main}
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className='col-md-5 right-container'>
+                                <p className='sub-heading'>five Days ForeCast</p>
+                                <div className='row'>
+                                    {forecastData?.list?.dt_txt}
+                                    <div className='col-md-10 forecast-subDiv'>
+                                        {dateBuilder(new Date())}<br />
+                                        {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
+                                        {weatherData.weather[0].main}
+                                    </div>
+                                    <div className='col-md-10 forecast-subDiv'>
+                                        {dateBuilder(new Date())}<br />
+                                        {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
+                                        {weatherData.weather[0].main}
+                                    </div><div className='col-md-10 forecast-subDiv'>
+                                        {dateBuilder(new Date())}<br />
+                                        {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
+                                        {weatherData.weather[0].main}
+                                    </div><div className='col-md-10 forecast-subDiv'>
+                                        {dateBuilder(new Date())}<br />
+                                        {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
+                                        {weatherData.weather[0].main}
+                                    </div><div className='col-md-10 forecast-subDiv'>
+                                        {dateBuilder(new Date())}<br />
+                                        {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
+                                        {weatherData.weather[0].main}
                                     </div>
                                 </div>
                             </div>
-                        </S.BodyContainer>) : ('')}
-
-                </S.SubContainer>
+                        </div>
+                    </S.BodyContainer>) : ('')}
             </S.MainContainer>
         </>
     )
