@@ -13,6 +13,6 @@ run the application
 
 npm start
 
-Deployment link
-github link - https://github.com/Harshsanas/weather-forecast.git
+Deployment link - https://react-weather-forecast-harshit.vercel.app/ <br/>
+github link - https://github.com/Harshsanas/weather-forecast.git <br/>
 portfolio Link - www.harshitsanas.com
