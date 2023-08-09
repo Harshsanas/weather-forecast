@@ -4,7 +4,6 @@ export const MainContainer = styled.div`
 border:1px solid #00d4ff;
 padding:10px 10px 50px 10px;;
 box-shadow:1px solid #abe9cd;
-${'' /* height:85vh; */}
 border-radius:8px;
 -webkit-box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
 box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);

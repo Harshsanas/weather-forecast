@@ -64,9 +64,9 @@ export default function Main({ label }) {
             } catch (error) {
                 console.error("Error fetching data:", error);
             }
-
         }
     }
+    console.log(forecastData)
 
     const toggleUnit = () => {
         setIsCelsius(!isCelsius);
@@ -95,7 +95,6 @@ export default function Main({ label }) {
                     value={cityInput}
                     onKeyPress={search}
                 />
-
                 {typeof weatherData?.main != "undefined" ? (
                     <S.BodyContainer>
                         <div className='row'>
@@ -115,22 +114,22 @@ export default function Main({ label }) {
                                     </div>
                                     <div className='col-md-4'>
                                         <p className='sub-title'>Humidity</p>
-                                        {weatherData?.main?.humidity}
+                                        {weatherData?.main?.humidity} &nbsp; %
                                     </div>
                                 </div>
                                 <p className='sub-heading'>Air Condition</p>
                                 <div className='row'>
                                     <div className='col-md-3'>
                                         <p className='sub-title'>Min Temp</p>
-                                        {Math.ceil(weatherData?.main?.temp_min) - 273}°C
+                                        {((weatherData?.main?.temp_min) - 273.15).toFixed(2)}°C
                                     </div>
                                     <div className='col-md-3'>
                                         <p className='sub-title'>Max Temp</p>
-                                        {Math.ceil(weatherData?.main?.temp_max) - 273}°C
+                                        {((weatherData?.main?.temp_max) - 273.15).toFixed(2)}°C
                                     </div>
                                     <div className='col-md-3'>
                                         <p className='sub-title'>Wind</p>
-                                        Speed : {weatherData?.wind?.speed} <br />
+                                        Speed : {weatherData?.wind?.speed} Km/h <br />
                                         Dir : {weatherData?.wind?.deg}
                                     </div>
                                     <div className='col-md-3'>
@@ -178,7 +177,7 @@ export default function Main({ label }) {
                                 </div>
                             </div>
                         </div>
-                    </S.BodyContainer>) : ('')}
+                    </S.BodyContainer>) : (<></>)}
             </S.MainContainer>
         </>
     )
