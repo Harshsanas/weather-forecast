@@ -102,7 +102,8 @@ font-weight:600;
 border:1px solid #00d4ff;
   border-radius:4px;
   padding:5px;
-  margin:10px 0 10px 10px;
+  
+  margin:0 0 10px 0;
   background:#213ACA;
 }
 `
