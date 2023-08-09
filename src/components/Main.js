@@ -142,7 +142,7 @@ export default function Main({ label }) {
 
                                     <p className='sub-heading'>Today's Forecast</p>
                                     <div className='row'>
-                                        <div className='col-md-11 forecast-subDiv'>
+                                        <div className='col-md-10 forecast-subDiv'>
                                             {dateBuilder(new Date())}<br />
                                             {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
                                             {weatherData.weather[0].main}
@@ -154,24 +154,24 @@ export default function Main({ label }) {
                                     <p className='sub-heading'>five Days ForeCast</p>
                                     <div className='row'>
                                         {forecastData?.list?.dt_txt}
-                                        <div className='col-md-11 forecast-subDiv'>
+                                        <div className='col-md-10 forecast-subDiv'>
                                             {dateBuilder(new Date())}<br />
                                             {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
                                             {weatherData.weather[0].main}
                                         </div>
-                                        <div className='col-md-11 forecast-subDiv'>
+                                        <div className='col-md-10 forecast-subDiv'>
                                             {dateBuilder(new Date())}<br />
                                             {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
                                             {weatherData.weather[0].main}
-                                        </div><div className='col-md-11 forecast-subDiv'>
+                                        </div><div className='col-md-10 forecast-subDiv'>
                                             {dateBuilder(new Date())}<br />
                                             {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
                                             {weatherData.weather[0].main}
-                                        </div><div className='col-md-11 forecast-subDiv'>
+                                        </div><div className='col-md-10 forecast-subDiv'>
                                             {dateBuilder(new Date())}<br />
                                             {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
                                             {weatherData.weather[0].main}
-                                        </div><div className='col-md-11 forecast-subDiv'>
+                                        </div><div className='col-md-10 forecast-subDiv'>
                                             {dateBuilder(new Date())}<br />
                                             {Math.ceil(weatherData?.main?.temp) - 273}°C &nbsp;&nbsp;&nbsp;
                                             {weatherData.weather[0].main}
