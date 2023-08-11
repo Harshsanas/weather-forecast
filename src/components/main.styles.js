@@ -13,15 +13,11 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
   font-size: 20px;
   font-weight:600;
   float:left;
-  background: linear-gradient(#abe9cd, #abe9cd);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
 }
 
 .github-icon{
   float:right;
-  color:white;
+  color:black;
   margin:8px;
   font-size:20px;
   cursor:pointer;
@@ -73,7 +69,7 @@ box-shadow: 0 2px 10px 1px rgba(0,0,0,0.5);
 
 export const BodyContainer = styled.div`
 margin:10px 0 0 0;
-color:white;
+${'' /* color:white; */}
 text-align:center;
 line-height:20px;
 
@@ -89,11 +85,9 @@ font-weight:600;
 }
 
 .forecast-subDiv{
-border:1px solid #00d4ff;
   border-radius:4px;
   padding:5px;
-  
-  margin:0 0 10px 0;
-  background:#213ACA;
+  text-align:center;
+  margin:0 0 50px 0;
 }
 `
